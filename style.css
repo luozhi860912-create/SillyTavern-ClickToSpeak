@@ -1,0 +1,315 @@
+/* ========== 主面板样式 ========== */
+#click-to-speak-panel {
+    padding: 10px;
+    margin: 5px 0;
+}
+
+#click-to-speak-panel hr {
+    border-color: var(--SmartThemeBorderColor);
+    margin: 8px 0;
+}
+
+#click-to-speak-panel h4 {
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+/* ========== 控制行 ========== */
+.cts-control-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.cts-control-row label {
+    font-size: 13px;
+    min-width: 60px;
+    white-space: nowrap;
+}
+
+.cts-control-row select,
+.cts-control-row input[type="range"] {
+    flex: 1;
+    min-width: 80px;
+    max-width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid var(--SmartThemeBorderColor);
+    background: var(--SmartThemeBlurTintColor);
+    color: var(--SmartThemeBodyColor);
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+.cts-control-row .cts-value-display {
+    font-size: 12px;
+    min-width: 30px;
+    text-align: center;
+    color: var(--SmartThemeQuoteColor);
+}
+
+/* ========== 开关按钮 ========== */
+.cts-toggle-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--SmartThemeBorderColor);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    user-select: none;
+    text-align: center;
+    min-width: 70px;
+}
+
+.cts-toggle-btn.cts-on {
+    background: #4CAF50;
+    color: white;
+    border-color: #388E3C;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+.cts-toggle-btn.cts-off {
+    background: #f44336;
+    color: white;
+    border-color: #d32f2f;
+}
+
+.cts-toggle-btn:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+/* ========== 测试按钮 ========== */
+.cts-test-btn {
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--SmartThemeBorderColor);
+    background: var(--SmartThemeBlurTintColor);
+    color: var(--SmartThemeBodyColor);
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.cts-test-btn:hover {
+    background: var(--SmartThemeQuoteColor);
+    color: var(--SmartThemeBodyColor);
+    transform: scale(1.05);
+}
+
+.cts-test-btn:active {
+    transform: scale(0.95);
+}
+
+/* ========== 状态指示器 ========== */
+.cts-status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background: var(--SmartThemeBlurTintColor);
+    border: 1px solid var(--SmartThemeBorderColor);
+}
+
+.cts-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.cts-status-dot.cts-active {
+    background: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.6);
+    animation: cts-pulse 2s infinite;
+}
+
+.cts-status-dot.cts-inactive {
+    background: #9E9E9E;
+}
+
+@keyframes cts-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ========== 可点击单词高亮 ========== */
+.cts-word-wrap {
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border-radius: 3px;
+    padding: 0 1px;
+    display: inline;
+}
+
+.cts-word-wrap:hover {
+    background: rgba(100, 181, 246, 0.3);
+    box-shadow: 0 0 4px rgba(100, 181, 246, 0.3);
+}
+
+.cts-word-wrap:active {
+    background: rgba(100, 181, 246, 0.5);
+    transform: scale(0.96);
+}
+
+/* 正在播放的单词 */
+.cts-word-speaking {
+    background: rgba(255, 193, 7, 0.4) !important;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.4) !important;
+    border-radius: 3px;
+}
+
+/* ========== 浮动提示 ========== */
+.cts-tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    pointer-events: none;
+    z-index: 99999;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    max-width: 250px;
+    text-align: center;
+}
+
+.cts-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.85);
+}
+
+/* ========== 整句朗读按钮 ========== */
+.cts-read-msg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--SmartThemeBorderColor);
+    background: var(--SmartThemeBlurTintColor);
+    color: var(--SmartThemeBodyColor);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    margin-left: 4px;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.cts-read-msg-btn:hover {
+    background: rgba(100, 181, 246, 0.3);
+    transform: scale(1.15);
+}
+
+.cts-read-msg-btn:active {
+    transform: scale(0.9);
+}
+
+.cts-read-msg-btn.cts-speaking {
+    background: rgba(255, 193, 7, 0.4);
+    animation: cts-pulse 1s infinite;
+}
+
+/* ========== 模式标签 ========== */
+.cts-mode-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.cts-mode-tab {
+    flex: 1;
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: 1px solid var(--SmartThemeBorderColor);
+    background: var(--SmartThemeBlurTintColor);
+    color: var(--SmartThemeBodyColor);
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.cts-mode-tab.cts-mode-active {
+    background: rgba(100, 181, 246, 0.3);
+    border-color: #64B5F6;
+    font-weight: bold;
+}
+
+.cts-mode-tab:hover {
+    opacity: 0.8;
+}
+
+/* ========== 手机适配 ========== */
+@media (max-width: 768px) {
+    .cts-control-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .cts-control-row select,
+    .cts-control-row input[type="range"] {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cts-toggle-btn {
+        width: 100%;
+    }
+
+    .cts-mode-tabs {
+        flex-direction: column;
+    }
+
+    .cts-word-wrap {
+        padding: 2px 3px;
+        /* 手机上增大点击区域 */
+    }
+}
+
+/* ========== 语音信息面板 ========== */
+.cts-voice-info {
+    font-size: 11px;
+    color: var(--SmartThemeQuoteColor);
+    padding: 4px 8px;
+    background: var(--SmartThemeBlurTintColor);
+    border-radius: 4px;
+    margin-top: 4px;
+    border: 1px solid var(--SmartThemeBorderColor);
+}
+
+/* ========== 停止按钮 ========== */
+.cts-stop-btn {
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: 1px solid #d32f2f;
+    background: #f44336;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.cts-stop-btn:hover {
+    background: #d32f2f;
+    transform: scale(1.05);
+}
