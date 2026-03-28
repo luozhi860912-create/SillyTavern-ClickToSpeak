@@ -1,0 +1,12 @@
+{
+    "display_name": "Click to Speak - EN/DE",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "ClickToSpeak",
+    "version": "1.2.0",
+    "homePage": "https://github.com/你的用户名/SillyTavern-ClickToSpeak",
+    "auto_update": true
+}
